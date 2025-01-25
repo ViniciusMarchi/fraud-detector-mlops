@@ -1,0 +1,45 @@
+images:
+  airflow:
+    repository: ghcr.io/viniciusmarchi/custom-airflow
+    tag: "latest"
+    # pullPolicy: IfNotPresent
+
+executor: CeleryExecutor
+
+postgresql:
+  enabled: true
+  data.metadataConnection.user: airflow
+  data.metadataConnection.pass: airflow
+  data.metadataConnection.db: airflow
+
+redis:
+  enabled: true
+
+users:
+  - username: admin
+    password: admin
+    role: Admin
+
+webserver:
+  service:
+    type: NodePort
+    ports:
+      - name: airflow-ui
+        port: 80
+        targetPort: airflow-ui
+        nodePort: 31000
+
+config:
+  scheduler:
+    dag_dir_list_interval: 10
+
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+  name: "airflow-worker"
+
+extraEnvFrom: |
+  - configMapRef:
+      name: airflow-env-vars
