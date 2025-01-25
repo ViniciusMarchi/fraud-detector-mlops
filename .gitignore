@@ -1,0 +1,12 @@
+.env
+venv/
+data/
+model/
+logs/
+**/.terraform/*
+*.csv
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+.terraform.tfstate.lock.info
