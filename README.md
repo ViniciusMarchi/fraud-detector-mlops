@@ -21,12 +21,12 @@
 ## Overview
 This project demonstrates a fraud detection pipeline from raw data ingestion to model deployment and monitoring. It’s designed as an **end-to-end MLOps** project, featuring:
 
-- Automated data ingestion and processing (cleaning, handling class imbalance with SMOTE, data types, and feature engineering)
-- Model development with scikit-learn and MLflow tracking (both Logistic Regression and Random Forest classifiers are trained and hyperparameter-tuned to maximize recall, with all runs tracked in MLflow)
-- Model storage/versioning in the MLflow Model Registry 
-- Containerized tasks orchestrated in Kubernetes via Airflow  
-- CI/CD pipelines with GitHub Actions to build Docker images and deploy automatically  
-- Real-time or batch scoring with a Streamlit UI  
+- **Automated data ingestion and processing** (cleaning, handling class imbalance with SMOTE, data types, and feature engineering)
+- **Model development with scikit-learn and MLflow tracking** (both Logistic Regression and Random Forest classifiers are trained and hyperparameter-tuned to maximize recall, with all runs tracked in MLflow)
+- **Model storage/versioning in the MLflow Model Registry**
+- **Containerized tasks orchestrated in Kubernetes via Airflow**
+- **CI/CD pipelines with GitHub Actions to build Docker images and deploy automatically**
+- **Real-time or batch scoring with a Streamlit UI**
 
 ## Key Features & Technologies
 - **Frameworks & Libraries**: pandas, scikit-learn, imbalanced-learn, MLflow  
